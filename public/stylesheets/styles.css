@@ -1,0 +1,35 @@
+html {
+    height: 100vh;
+    width: 100vw;
+}
+
+body {
+    background-color: antiquewhite;
+    height: 100%;
+    width: 100%;
+}
+
+header {
+    background-color: coral;
+    height: 100px;
+}
+
+main {
+    background-color: whitesmoke;
+    min-height: 500px;
+}
+
+#weather-card {
+
+}
+
+footer {
+    background-color: lightcyan;
+    height: 100px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+
+
