@@ -6,29 +6,33 @@ html {
 body {
     background-color: antiquewhite;
     height: 100%;
-    width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 header {
     background-color: coral;
-    height: 100px;
+    flex:0 1 100px;
 }
 
 main {
     background-color: whitesmoke;
-    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    flex:1 1 auto;
+    justify-content: center;
+    align-items: center;
 }
 
 #weather-card {
-
+    background-color: aqua;
+    height: 400px;
+    width: 400px;
 }
 
 footer {
     background-color: lightcyan;
-    height: 100px;
-    width: 100%;
-    position: absolute;
-    bottom: 0;
+    flex:0 1 100px;
 }
 
 
