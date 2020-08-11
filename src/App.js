@@ -1,25 +1,34 @@
 import React from 'react';
+import Info from './Info';
 
 class App extends React.Component{
-    async getWeatherData(url) {
+    getExtraInfo(data) {
+        return data;
+    }
+    getInfo(data) {
+        return data;
+    }
+    async getWeatherData(city) {
         try {
+            const url = `http://api.openweathermap.org/data/2.5/weather?q=${city},uk&APPID=${process.env.REACT_APP_API_KEY}`;
             const response = await fetch(url, {mode: 'cors'});
-            const data = await response.json();
-            console.log(data);
+            const data =  await response.json();
+            this.getInfo(data);
+            this.getExtraInfo(data);
         } catch(error) {
 
         }
     }
-    getUrl(location) {
-        const city = location;
-        const api_key = "fb94cdfd6fbdf9e769da8febcdcf4fba";
-        const url = `http://api.openweathermap.org/data/2.5/weather?q=${city},uk&APPID=${api_key}`;
-        this.getWeatherData(url);
-    }
+
     render() {
+        this.getWeatherData('london');
         return (
             <div id="weather-card">
-                {this.getUrl('london')}
+                <div>
+                    <img />
+                </div>
+                {/*<Info/>*/}
+                {}
             </div>
         )
     }
