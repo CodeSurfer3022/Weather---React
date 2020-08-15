@@ -52,52 +52,26 @@ function getDegreesinCandF(kelvin) {
 }
 
 class App extends React.Component{
-    getExtraInfo(data) {
-        return {
-            sunrise: data.sys.sunrise,
-            sunset: data.sys.sunset,
-            humidity: data.main.humidity,
-            pressure: data.main.pressure,
-            visibility: data.visibility,
-            wind: data.wind,
-            min_temp : data.main.temp_min,
-            max_temp: data.main.temp_max
-        }
-    }
-    getInfo(data) {
-        let temp = data.main.temp;
-        let feelsLike = data.main.feels_like;
-        return {
-            cityName: data.name,
-            clouds: data.weather[0].description,
-            temperature: getDegreesinCandF(temp),
-            feelsLike: getDegreesinCandF(feelsLike),
-        };
-    }
-    async getWeatherData(city) {
-        try {
-            const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${process.env.REACT_APP_API_KEY}`;
-            const response = await fetch(url, {mode: 'cors'});
-            const data =  await response.json();
-            const info = this.getInfo(data);
-            console.log(info);
-            const extraInfo = this.getExtraInfo(data);
-            console.log(extraInfo);
-
-        } catch(error) {
-
-        }
-    }
 
     render() {
-        this.getWeatherData('seattle');
         return (
-            <div id="weather-card">
-                <div>
-                    <img />
+            <div>
+                <div className="search-bar">
+                    <input className="search-box"
+                        type="text"
+                    />
                 </div>
-                {/*<Info/>*/}
-                {}
+                <div id="weather-card">
+                    <div id="sky">
+                        <img alt="clouds"/>
+                    </div>
+                    <div id="info">
+                        <h3>Bengaluru</h3>
+                        <p>cloudy</p>
+                        <p>23 deg</p>
+                        <p>20 deg</p>
+                    </div>
+                </div>
             </div>
         )
     }

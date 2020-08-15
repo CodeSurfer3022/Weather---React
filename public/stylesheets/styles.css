@@ -1,3 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 html {
     height: 100vh;
     width: 100vw;
@@ -24,10 +30,36 @@ main {
     align-items: center;
 }
 
+.search-bar {
+    height: 100px;
+    width: 400px;
+    position: relative;
+    bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.search-box {
+    height: 50%;
+    width: 100%;
+    font-size: 2em;
+}
+
 #weather-card {
     background-color: aqua;
     height: 400px;
     width: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+#sky {
+    background-color: coral;
+    flex: 1 0 100px;
+}
+
+#info {
+    flex: 3 0 100px;
 }
 
 footer {
