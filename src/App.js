@@ -52,8 +52,58 @@ function getDegreesinCandF(kelvin) {
 }
 
 class App extends React.Component{
+    constructor(props) {
+        super(props);
+        this.getWeatherData('Bengaluru').then(data => {
+            this.setState(data);
+        });
+    }
+
+
+    getExtraInfo(data) {
+        return {
+            sunrise: data.sys.sunrise,
+            sunset: data.sys.sunset,
+            humidity: data.main.humidity,
+            pressure: data.main.pressure,
+            visibility: data.visibility,
+            wind: data.wind,
+            min_temp : data.main.temp_min,
+            max_temp: data.main.temp_max
+        }
+    }
+    getInfo(data) {
+        let temp = data.main.temp;
+        let feelsLike = data.main.feels_like;
+        return {
+            cityName: data.name,
+            clouds: data.weather[0].description,
+            cloudsImage: data.weather[0].icon,
+            temperature: getDegreesinCandF(temp),
+            feelsLike: getDegreesinCandF(feelsLike),
+        };
+    }
+    async getWeatherData(city) {
+        try {
+            const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${process.env.REACT_APP_API_KEY}`;
+            const response = await fetch(url, {mode: 'cors'});
+            const data =  await response.json();
+            console.log(data);
+            return {
+                info: this.getInfo(data),
+                extraInfo: this.getExtraInfo(data)
+            }
+        } catch(error) {
+            console.log("couldn't get info\n");
+        }
+    }
 
     render() {
+        console.log(this.state)
+        if (!this.state) {
+            return <div>Loading</div>
+        }
+        const info = this.state.info;
         return (
             <div>
                 <div className="search-bar">
@@ -63,13 +113,21 @@ class App extends React.Component{
                 </div>
                 <div id="weather-card">
                     <div id="sky">
-                        <img alt="clouds"/>
+                        <img src={`http://openweathermap.org/img/wn/${info.cloudsImage}@4x.png`} alt="clouds"/>
                     </div>
                     <div id="info">
-                        <h3>Bengaluru</h3>
-                        <p>cloudy</p>
-                        <p>23 deg</p>
-                        <p>20 deg</p>
+                        <div id="city">
+                            {info.cityName}
+                        </div>
+                        <div id="clouds">
+                            {info.clouds}
+                        </div>
+                        <div id="temp">
+                            {info.temperature.centigrade}
+                        </div>
+                        <div id="feels">
+                            Feels like: {info.feelsLike.centigrade}
+                        </div>
                     </div>
                 </div>
             </div>
