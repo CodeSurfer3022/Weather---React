@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100vh;
+    width: 100vw;
+}
+
+body {
+    background-color: antiquewhite;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: coral;
+    flex:0 1 100px;
+}
+
+main {
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    flex:1 1 auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-bar {
+    height: 100px;
+    width: 400px;
+    position: relative;
+    bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.search-box {
+    height: 50%;
+    width: 100%;
+    font-size: 2em;
+}
+
+#weather-card {
+    background-color: dodgerblue;
+    height: 400px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+#sky {
+    background-color: coral;
+    flex: 1 0 100px;
+    text-align: center;
+}
+
+#info {
+    flex: 3 0 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    color: whitesmoke;
+}
+
+#city{
+    font-size: 2em;
+    padding: 10px 10px 0 10px;
+}
+
+#clouds{
+    font-size: 1em;
+    padding: 5px 10px;
+}
+
+#temp {
+    font-size: 1.5em;
+    padding: 20px;
+}
+
+#feels {
+    font-size: 1em;
+}
+
+footer {
+    background-color: lightcyan;
+    flex:0 1 100px;
+}
+
+
+
