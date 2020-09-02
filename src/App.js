@@ -40,7 +40,7 @@ class App extends React.Component{
     }
     async getWeatherData(city) {
         try {
-            const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${process.env.REACT_APP_API_KEY}`;
+            const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${process.env.REACT_APP_API_KEY}`;
             const response = await fetch(url, {mode: 'cors'});
             const data =  await response.json();
             console.log(data);
@@ -83,7 +83,7 @@ class App extends React.Component{
                 </div>
                 <div id="weather-card">
                     <div id="sky">
-                        <img src={`https://openweathermap.org/img/wn/${info.cloudsImage}@2x.png`} alt="clouds"/>
+                        <img src={`http://openweathermap.org/img/wn/${info.cloudsImage}@2x.png`} alt="clouds"/>
                     </div>
                     <div id="info">
                         <div id="city">
