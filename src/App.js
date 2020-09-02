@@ -83,7 +83,7 @@ class App extends React.Component{
                 </div>
                 <div id="weather-card">
                     <div id="sky">
-                        <img src={`http://openweathermap.org/img/wn/${info.cloudsImage}@2x.png`} alt="clouds"/>
+                        <img src={`https://openweathermap.org/img/wn/${info.cloudsImage}@2x.png`} alt="clouds"/>
                     </div>
                     <div id="info">
                         <div id="city">
