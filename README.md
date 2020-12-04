@@ -2,4 +2,4 @@
 
 A cool weather App in React.
 
-Live demo: https://chandraprakash-dev.github.io/Weather---React/
+Live demo: https://chandraprakash-dev.github.io/Weather/
