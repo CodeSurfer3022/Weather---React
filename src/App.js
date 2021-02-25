@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 
 function getDegreesinCandF(kelvin) {
         return {
@@ -7,13 +7,16 @@ function getDegreesinCandF(kelvin) {
         }
 }
 
-class App extends React.Component{
+class App extends Component{
     constructor(props) {
         super(props);
+    }
+    componentDidMount() {
         this.getWeatherData('Bengaluru').then(data => {
             this.setState(data);
         });
     }
+
     getExtraInfo(data) {
         return {
             sunrise: data.sys.sunrise,
