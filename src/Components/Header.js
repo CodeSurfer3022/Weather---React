@@ -2,7 +2,7 @@ import React from "react";
 
 function Header(props) {
   return (
-    <div>
+    <div id="header">
       <h1>Weather</h1>
       <input className="search-box"
              type="text"

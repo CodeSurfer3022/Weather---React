@@ -3,7 +3,7 @@ import Info from "./Info";
 
 function WeatherCard(props) {
   return (
-    <div>
+    <div id="weather-card">
       <div id="sky">
         <img src={`http://openweathermap.org/img/wn/${props.info.cloudsImage}@2x.png`} alt="clouds"/>
       </div>
