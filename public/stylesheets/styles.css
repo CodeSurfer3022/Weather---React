@@ -6,39 +6,34 @@ body {
     font-family: "Helvetica Neue", sans-serif;
 }
 
-#root {
-    background: skyblue;
+#screen {
+    background: deepskyblue;
+    width: 350px;
+}
+
+h1 {
+    padding: 10px;
 }
 
 #header {
+    background: coral;
     text-align: center;
     color: white;
 }
 
 .search-box {
     font-size: 2em;
+    width: 90%;
     height: 50px;
-    width: 100%;
+    padding: 5px;
     margin-bottom: 20px;
 }
 
-#weather-card {
-    height: 400px;
-    width: 400px;
-    display: flex;
-    flex-direction: column;
-}
-
 #sky {
-    flex: 1 0 100px;
     text-align: center;
 }
 
 #info {
-    flex: 3 0 100px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     text-align: center;
     font-family: Arial, sans-serif;
     color: whitesmoke;
@@ -61,6 +56,7 @@ body {
 
 #feels {
     font-size: 1em;
+    padding-bottom: 20px;
 }
 
 
