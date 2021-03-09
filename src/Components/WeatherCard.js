@@ -1,22 +1,13 @@
 import React from "react";
-import Sky from "./Sky";
+import Info from "./Info";
 
-function WeatherCard() {
+function WeatherCard(props) {
   return (
-    <div id="info">
-      <Sky info={info} />
-      <div id="city">
-        {info.cityName}, {info.country}
+    <div>
+      <div id="sky">
+        <img src={`http://openweathermap.org/img/wn/${props.info.cloudsImage}@2x.png`} alt="clouds"/>
       </div>
-      <div id="clouds">
-        {info.clouds}
-      </div>
-      <div id="temp">
-        {info.temperature.centigrade}°
-      </div>
-      <div id="feels">
-        Feels like: {info.feelsLike.centigrade}°
-      </div>
+      <Info info={props.info}/>
     </div>
   )
 }
